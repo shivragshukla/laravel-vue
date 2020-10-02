@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -58,7 +60,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email,'.$id,
+        ]);
+
+        try {
+            User::find($id)->update($data);
+            return ['status'=>'success'];
+        } catch (ModelNotFoundException $e) {
+            return ['status'=>'error'];
+        }
+
     }
 
     /**
@@ -69,6 +83,11 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            User::find($id)->delete();
+            return ['status'=>'success'];
+        } catch (ModelNotFoundException $e) {
+            return ['status'=>'error'];
+        }
     }
 }
