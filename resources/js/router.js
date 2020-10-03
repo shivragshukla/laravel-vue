@@ -5,6 +5,9 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/user/Dashboard'
 import AdminDashboard from './pages/admin/Dashboard'
+import UserListFilter from './components/UserListFilter'
+import Script from './components/Script'
+
 // Routes
 const routes = [
   {
@@ -51,6 +54,22 @@ const routes = [
     /*meta: {
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }*/
+  },
+   {
+    path: '/users',
+    name: 'users',
+    component: UserListFilter,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/script',
+    name: 'script',
+    component: Script,
+    meta: {
+      auth: true
+    }
   },
 ]
 const router = new VueRouter({

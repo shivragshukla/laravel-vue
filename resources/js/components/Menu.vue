@@ -66,6 +66,16 @@
               name: 'Dashboard',
               path: 'admin.dashboard',
               icon: 'arrow-right-circle'
+            },
+            {
+              name: 'User List',
+              path: 'users',
+              icon: 'person'
+            },
+            {
+              name: 'Script',
+              path: 'script',
+              icon: 'code'
             }
           ]
         }

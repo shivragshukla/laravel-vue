@@ -23,6 +23,11 @@ import { Form, HasError, AlertError } from 'vform'
 import * as filters from './filters';
 import * as alert from './alert'
 
+//DataTables
+require( 'datatables.net' );
+//require( 'datatables.net-bs' );
+
+
 // register global utility filters.
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key]);

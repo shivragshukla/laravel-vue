@@ -36,3 +36,5 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::apiResource('users', 'UserController');
 
 });
+//filter and pagination
+Route::get('/user/pagnination', 'UserController@pagnination');
