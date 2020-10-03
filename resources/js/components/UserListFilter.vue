@@ -27,6 +27,7 @@
                                             <th>ID</th>
                                             <th>User</th>
                                             <th>Email</th>
+                                            <th>IP Address</th>
                                             <th>Created</th>
                                         </tr>
                                     </thead>
@@ -254,7 +255,8 @@
                         { data: 'id' },
                         { data: 'name' },
                         { data: 'email' },
-                        { data: 'created_at' }
+                        { data: 'ip_address' },
+                        { data: 'created_at' },
                     ]
                 });
             },

@@ -122,6 +122,7 @@ class UserController extends Controller
             ->where(function($q) use($searchValue){
                 $q->where('name', 'like', '%' .$searchValue . '%')
                 ->orWhere('email', 'like', '%' .$searchValue . '%')
+                ->orWhere('ip_address', 'like', '%' .$searchValue . '%')
                 ->orWhere('created_at', 'like', '%' .$searchValue . '%');
             });
 
@@ -143,6 +144,7 @@ class UserController extends Controller
               "id" => ++$key,
               "name" => $record->name,
               "email" => $record->email,
+              "ip_address" => $record->ip_address,
               "created_at" => $record->created_at->format('Y-m-d'),
               "action" => $record,
             );

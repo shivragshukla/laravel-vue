@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'name' => 'Shivrag',
             'email' => 'admin@gmail.com',
             'password' => Hash::make('123456'),
+            'ip_address' => '0.0.0.0',
         ]);
     }
 }

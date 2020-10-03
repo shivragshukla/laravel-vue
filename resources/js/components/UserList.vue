@@ -26,6 +26,7 @@
                                         <tr>
                                             <th>User</th>
                                             <th>Email</th>
+                                            <th>IP address</th>
                                             <th>Created</th>
                                             <th>Action</th>
                                         </tr>
@@ -35,6 +36,7 @@
                                         <tr v-for="user in users" :key="user.id">
                                             <td>{{ user.name}}</td>
                                             <td>{{ user.email}}</td>
+                                            <td><code>{{ user.ip_address}}</code></td>
                                             <td>{{ user.created_at | dateFormat}}</td>
                                             <td>
 
